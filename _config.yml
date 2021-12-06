@@ -13,8 +13,8 @@
 
 theme: jekyll-agency
 
-url    : "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+url    : "teamnerf" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/ADA_Data_Story" # the subpath of your site, e.g. /blog
 
 title      : NERF
 description: "Site description"
