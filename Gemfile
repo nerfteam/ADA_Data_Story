@@ -17,3 +17,5 @@ gem "webrick", "~> 1.7"
 gem 'eventmachine', '1.2.7', git: 'https://github.com/eventmachine/eventmachine.git', tag: 'v1.2.7'
 
 gem "github-pages", "~> 219", group: :jekyll_plugins
+
+gem 'jekyll-agency'

@@ -3,13 +3,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
-        <span class="copyright"
-          >Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span
-        >
+        <span class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span>
+
+        <div class="text-muted m-0 p-0">Created with jekyll-agency theme</div>
       </div>
       <!-- Social Media -->
       <div class="col-md-1 offset-md-1">
-        <ul class="list-inline social-buttons">
+        <ul class="list-inline social-buttons pt-2">
           {% for link in site.data.sitetext[site.locale].footer.social %}
           <li class="list-inline-item">
             {% if link.url %}
