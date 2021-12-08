@@ -8,10 +8,10 @@
 # -----------------
 en: &DEFAULT_EN
   nav:
-    - title: "Services"
-      section: services
-    - title: "Portfolio"
-      section: portfolio
+    - title: "Introduction"
+      section: introduction
+    - title: "Basic Analysis"
+      section: basic_analysis
     - title: "About"
       section: about
     - title: "Timeline"

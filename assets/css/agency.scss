@@ -24,8 +24,8 @@ $quotation-image: "{{ site.data.style.quotation-image }}";
 
 // Layout
 @import "layout/masthead.scss";
-@import "layout/services.scss";
-@import "layout/portfolio.scss";
+@import "layout/introduction.scss";
+@import "layout/_basic_analysis.scss";
 @import "layout/timeline.scss";
 @import "layout/team.scss";
 @import "layout/footer.scss";

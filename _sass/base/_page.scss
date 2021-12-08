@@ -69,3 +69,7 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+
+.pie-label-up .c3-chart-arcs text {
+  transform: translate(-50px, -50px) !important;
+}
