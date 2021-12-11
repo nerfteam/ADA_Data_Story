@@ -14,6 +14,7 @@ $black: {{ site.data.style.black | default: "#000" }} !default;
 $header-image: "{{ site.data.style.header-image }}";
 $contact-image: "{{ site.data.style.contact-image }}";
 $quotation-image: "{{ site.data.style.quotation-image }}";
+$party-gradient: "{{ site.data.style.party-gradient }}";
 
 // Global CSS
 @import "base/page.scss";
@@ -26,6 +27,7 @@ $quotation-image: "{{ site.data.style.quotation-image }}";
 @import "layout/masthead.scss";
 @import "layout/introduction.scss";
 @import "layout/_basic_analysis.scss";
-@import "layout/timeline.scss";
+@import "layout/sentiment_analysis.scss";
 @import "layout/team.scss";
 @import "layout/footer.scss";
+@import "layout/plots.scss";

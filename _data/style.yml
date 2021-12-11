@@ -6,5 +6,6 @@
 #Image Customization
 header-image: "../img/black_wall.jpg"
 quotation-image: "../img/quotation.svg"
+party-gradient: "../img/partyGradient.svg"
 #Font Awesome icon for portfolio grid when an item is hovered over
 #portfolio-icon: fas fa-expand-arrows-alt fa-3x #default: fas fa-plus fa-3x
