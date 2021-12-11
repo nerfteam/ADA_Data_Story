@@ -36,6 +36,7 @@
         @include heading-font;
         &.active,
         &:hover,
+        &:focus,
         .active {
           color: $primary !important;
           background-color: transparent !important;
