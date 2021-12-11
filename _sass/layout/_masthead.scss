@@ -2,14 +2,13 @@
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("#{$header-image}");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
+  background: url("#{$header-image}") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
-  min-height: 400px;
-  min-width: 500px;
+   min-height: 100vh;
+   min-width: 100vw;
   .intro-text {
     padding-top: 150px;
     padding-bottom: 100px;
