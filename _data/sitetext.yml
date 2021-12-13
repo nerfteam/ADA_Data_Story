@@ -44,11 +44,11 @@ en: &DEFAULT_EN
         align: right
     end: "Be Part <br> of Our <br> Story!"
 
-  timeline_analysis:
-    title: "Timeline Analysis"
-    text: "our story"
+  conclusion:
+    title: "Conclusion"
+    text: "hmm concluded what how blabla"
     body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
-    section: timeline_analysis
+    section: conclusion
 
   team:
     title: "Meet the team"

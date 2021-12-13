@@ -225,7 +225,7 @@ function testtest() {
     })
     .append('div', '.legend-label')
     .html(function (id) {
-      return id + '&nbsp&nbsp&nbsp';
+      return id;
     })
     .on('mouseover', function (id) {
       democraticFlag = id == 'Democratic Party';

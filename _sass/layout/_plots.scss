@@ -8,12 +8,16 @@
 margin-top: 1em;
 margin-bottom: 1em;
 background-color: $republican-color;
+white-space: normal;
+word-wrap: break-word;
 }
 
 .badge-democratic {
 margin-top: 1em;
 margin-bottom: 1em;
 background-color: $democratic-color;
+white-space: normal;
+word-wrap: break-word;
 }
 
 #testest .c3-legend-item-quotes  {

@@ -13,10 +13,10 @@ en: &DEFAULT_EN
     - dropdown:
       - title: "Basic Analysis"
         section: basic_analysis
-      - title: "Timeline Analysis"
-        section: timeline_analysis
       - title: "Sentiment Analysis"
         section: sentiment_analysis
+    - title: "Conclusion"
+      section: conclusion
     - title: "Team"
       section: team
 en-US:
