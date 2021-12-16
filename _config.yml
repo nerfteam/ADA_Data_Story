@@ -6,8 +6,7 @@
 # If you change this file, please restart the server process.
 
 # Site settings
-# are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# are used to personalize your new site.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
@@ -16,8 +15,8 @@ theme: jekyll-agency
 url    : "teamnerf" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/ADA_Data_Story" # the subpath of your site, e.g. /blog
 
-title      : NERF
-description: "Site description"
+title      : The Climate of Climate Change
+description: "A short data driven story on what is said and quoted in US politics on climate change. Who are the actors and what are they saying?"
 author     : Team NERF
 logo       : True
 
