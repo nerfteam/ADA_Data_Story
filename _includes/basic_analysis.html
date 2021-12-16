@@ -18,14 +18,120 @@
         </p>
       </div>
 
-
-      <div class="col-md-6">
+      <div class="col-md-4">
         <h6 class="subheading text-center">Total number of politicians</h6>
         <div id="pie_politicians"></div>
       </div>
-      <div class="col-md-6">
-        <h6 class="subheading text-center">Total number of quotes</h6>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Total number of quotes <span class="hide">extra</span></h6>
         <div id="pie_quotes"></div>
+      </div>
+      <div class="col-md-4 pie-label-up">
+        <h6 class="subheading text-center">Total number of climate change quotes</h6>
+        <div id="pie_climate_quotes"></div>
+      </div>
+    </div>
+
+
+
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          Let's warm up with a simple question - demographic analysis
+        </p>
+        <br>
+        <p class="text-justify lead">
+          <strong>Gender analysis</strong>
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        <h6 class="subheading text-center">Number of climate change related quotes by gender</h6>
+        <div id="pie_gender_quotes"></div>
+      </div>
+      <div class="col-md-6">
+        <h6 class="subheading text-center">Total number of quotes by gender<span class="hide">extra extra</span></h6>
+        <div id="pie_gender_cc_quotes"></div>
+      </div>
+
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          Although male gender has more climate change related quotes and more total number of general quotes than
+          women, in the table we can see that ratio present us the information that female gender is more aware of this
+          global problem. This can be interpreted as Simpson's paradox.
+          <br>Interesting...
+        </p>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          <strong>Age analysis</strong>
+        </p>
+        <p class="text-justify lead">
+          Secondly, we will analyse data with respect to age. Is awareness more present in certain age groups?
+        </p>
+      </div>
+
+      <div class="col-md-12">
+        <h6 class="subheading text-center">Number of climate change quotations by age</h6>
+        <div>
+          {% include CCquotes_per_age.html %}
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          So, we can see that number of quotes with respect to age parameter follows Gaussian-like distribution, with
+          anomaly in the age group of 21. Interesting...
+          Now, let's see if the age structure changes when we add gender dimensionality.
+        </p>
+      </div>
+
+      <div class="col-md-12">
+        <h6 class="subheading text-center">Age analysis with added gender dimensionality</h6>
+        <div>
+          {% include CC_age_gender.html %}
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          The visual representatinon, as well as the mean values, are similar, we could ask ourselves if these two
+          distributions are the same. Since the std values are similar, we can apply ttest.
+        </p>
+        <p class="text-justify lead">
+          Since the p-value is less than ordinary 0.01, we can conclude that difference in mean values is significant,
+          therefore these are the different distributions.
+        </p>
+      </div>
+    </div>
+
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          <strong>Educational analysis</strong>
+        </p>
+        <p class="text-justify lead">
+          How level of education affects self-awareness?
+        </p>
+      </div>
+
+      <div class="col-md-12">
+        <h6 class="subheading text-center">Top speakers in respect to number of degrees</h6>
+        <div>
+          {% include degrees_all_plot.html %}
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          Blabla
+        </p>
       </div>
     </div>
 
@@ -39,47 +145,50 @@
         </p>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
         <h6 class="subheading text-center">Politicians grouped by party affiliation</h6>
         <div id="pie_politicians_party"></div>
       </div>
-      <div class="col-md-6">
-        <h6 class="subheading text-center">Quotes grouped by party affiliation</h6>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Quotes grouped by party affiliation <span class="hide">extra</span></h6>
         <div id="pie_quotes_party"></div>
       </div>
-    </div>
-
-    <br><br>
-
-    <div class="row mt-3">
-      <div class="col-md-12">
-        <p class="text-justify lead">
-          After extracting quotes related to climate change, we acquire following results.
-        </p>
-      </div>
-
-      <div class="col-md-6 pie-label-up">
-        <h6 class="subheading text-center">Total number of climate change quotes</h6>
-        <div id="pie_climate_quotes"></div>
-      </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <h6 class="subheading text-center">Climate change quotes grouped by party affiliation</h6>
         <div id="pie_climate_quotes_party"></div>
       </div>
-    </div>
 
-    <br><br>
-
-    <div class="row mt-3">
       <div class="col-md-12">
         <p class="text-justify lead">
-          We can easily see that the Republicans are quoted more about climate change than the Democrats. Bla bla bla..
-          Because blabla...
-          Relatively bla bla bla.
+          From the above inspection, we see extraordinary event. Democratic party, although having less number of
+          general quotes in total, has bigger number of quotes related to climate change. Does it mean that Democrats
+          are more conscious?
+          <br>On the other hand, ratio values are very small, so it may lead us to believe that political affiliation is
+          irrelevant?
+          <br>Peculiar...
         </p>
       </div>
     </div>
-
+    <br><br>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          But what about the individuals from those parties? Let's observe the most cited ones.
+        </p>
+      </div>
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h6 class="subheading text-center">Top Climate Change Speakers</h6>
+          </div>
+          <div class="panel-body">
+            <div class="col-md-10 display-inline-block">
+              <div id="testest"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <br><br>
 
@@ -89,6 +198,42 @@
         <h3 class="section-subheading text-muted">
           Some more analysis...
         </h3>
+      </div>
+
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          Okay, that's enough of analysing the isolated parameters.
+          We have observed some interesting statistics, but is it relevant to our problem? <br>
+          Recall that our analysis should be based on different political and demographic parameters of speakers. So,
+          let's see which of aforementioned and described parameters really matter. <br>
+          As Bob West would say, 'Linear regression gives us free p-values'. So why would not we utilize this present.
+        </p>
+        <p class="text-justify lead">
+          Based on the result of linear regression we can conclude:
+        <ul>
+          <li>Features <strong>age</strong> and <strong>gender</strong> have p-values bigger than 0.05, and therefore do not have significant
+            influence on outcome, i.e. on the number of quotations regarding climate change. </li>
+          <li>Political features (*was_candidate, was_in_congres, was_president, party_count, party_name*) have
+            significant impact on outcome.</li>
+          <li>Number of degrees have significant impact on outcome.</li>
+          <li>Features *numOccurrences, totalNumOccurrences, total_num_quotes*, which are more media related, have
+            significant impact on outcome.</li>
+        </ul>
+        <br>
+
+        Note the R<sup>2</sup> coefficient, it is 0.949, which means that we have explained most of the variance. But
+        this observation is not of a importance if residuals are not zero-centered. Let's check that.
+
+        </p>
+      </div>
+      <div class="col-md-12">
+        <img src="assets/img/residuals.png" alt="" srcset="">
+      </div>
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          Since residuals are mean centered, we can conclude that R<sup>2</sup> measure is relevant. <br>
+          So this tell us that we have three groups of features which are significant, but which ones are the most important?
+        </p>
       </div>
     </div>
 
@@ -103,37 +248,7 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <h6 class="subheading text-center">Number of climate change quotations by age</h6>
-        <div>
-          {% include CCquotes_per_age.html %}
-        </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <h6 class="subheading text-center">Gender analysis by age</h6>
-        <div>
-          {% include CC_age_gender.html %}
-        </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h6 class="subheading text-center">Top 8 Climate Change Speakers</h6>
-          </div>
-          <div class="panel-body">
-            <div class="col-md-10 display-inline-block">
-              <div id="testest"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 </section>
