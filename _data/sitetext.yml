@@ -18,28 +18,32 @@ en: &DEFAULT_EN
     title: "Meet the team"
     section: team
     people:
-      - name: "Natalija Mitic"
+      - name: "atalija Mitic"
+        first: "N"
         role: "Computer Science <i class='fas fa-laptop'></i>"
         social:
           - url: mailto:naca@ntec.ch
             icon: fa fa-envelope
           - url: https://github.com/natalijamitic
             icon: fab fa-github
-      - name: "Edvin Maid"
+      - name: "dvin Maid"
+        first: "E"
         role: "Computer Science <i class='fas fa-laptop'></i>"
         social:
           - url: mailto:edvvin@mail.com
             icon: fa fa-envelope
           - url: https://github.com/Edvvin
             icon: fab fa-github
-      - name: "Radenko Pejic"
+      - name: "adenko Pejic"
+        first: "R"
         role: "Computer Science <i class='fas fa-laptop'></i>"
         social:
           - url: mailto:radenkopejicvaljevo@gmail.com
             icon: fa fa-envelope
           - url: https://github.com/radenkoPejic
             icon: fab fa-github
-      - name: "Filip Carevic"
+      - name: "ilip Carevic"
+        first: "F"
         role: "Computer Science <i class='fas fa-laptop'></i>"
         social:
           - url: mailto:filip.carevic11@gmail.com
