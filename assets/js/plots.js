@@ -141,29 +141,29 @@ function generateTimeseriesChart(name, data) {
 }
 
 chart = null;
-democraticIdx = [1, 3, 5, 7]
-republicanIdx = [0, 2, 4, 6]
+democraticIdx = [0, 2, 3, 4, 5, 7]
+republicanIdx = [1, 6]
 totalNum = 8;
 
 republicanColor = "#C82D2F";
 democraticColor = "#426AE4";
 
-chartName = "testest";
+chartName = "top-speakers";
 
-function testtest() {
+function topSpeakers() {
   chart = c3.generate({
     bindto: `#${chartName}`,
 
     data: {
       json: [
-        { label: "Donald Trump", quotes: 12 },
-        { label: "Barack Obama", quotes: 10 },
-        { label: "Donald Trump", quotes: 9 },
-        { label: "Barack Obama", quotes: 7 },
-        { label: "Donald Trump", quotes: 7 },
-        { label: "Barack Obama", quotes: 4 },
-        { label: "Natalija Mitic", quotes: 2 },
-        { label: "Filip Carevic", quotes: 1 }
+        { label: "Barack Obama", quotes: 2720 },
+        { label: "Donald Trump", quotes: 2493 },
+        { label: "Bernie Sanders", quotes: 1497 },
+        { label: "Jerry Brown", quotes: 1054 },
+        { label: "Jay Inslee", quotes: 993 },
+        { label: "Al Fore", quotes: 924 },
+        { label: "Scott Pruitt", quotes: 772 },
+        { label: "Alexandra Ocasio-Cortez", quotes: 661 }
       ],
       keys: {
         x: 'label',
@@ -182,7 +182,7 @@ function testtest() {
       },
       y: {
         label: {
-          text: 'number of quotes',
+          text: 'number of climate change quotes',
           position: 'outer-middle'
         }
       },
@@ -240,4 +240,4 @@ function testtest() {
       }
     });
 }
-testtest();
+topSpeakers();

@@ -10,6 +10,7 @@
       </div>
     </div>
 
+    <!-- DATA SIZE -->
     <div class="row pie-label-up">
 
       <div class="col-md-12">
@@ -20,21 +21,28 @@
 
       <div class="col-md-4">
         <h6 class="subheading text-center">Total number of politicians</h6>
+      </div>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Total number of quotes</h6>
+      </div>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Total number of climate change quotes</h6>
+      </div>
+
+      <div class="col-md-4">
         <div id="pie_politicians"></div>
       </div>
       <div class="col-md-4">
-        <h6 class="subheading text-center">Total number of quotes <span class="hide">extra</span></h6>
         <div id="pie_quotes"></div>
       </div>
-      <div class="col-md-4 pie-label-up">
-        <h6 class="subheading text-center">Total number of climate change quotes</h6>
+      <div class="col-md-4">
         <div id="pie_climate_quotes"></div>
       </div>
     </div>
 
-
-
     <br><br>
+
+    <!-- Gender Analysis -->
     <div class="row">
       <div class="col-md-12">
         <p class="text-justify lead">
@@ -47,25 +55,34 @@
       </div>
 
       <div class="col-md-6">
-        <h6 class="subheading text-center">Number of climate change related quotes by gender</h6>
-        <div id="pie_gender_quotes"></div>
+        <h6 class="subheading text-center">Total number of quotes by gender</h6>
       </div>
       <div class="col-md-6">
-        <h6 class="subheading text-center">Total number of quotes by gender<span class="hide">extra extra</span></h6>
+        <h6 class="subheading text-center">Number of climate change related quotes by gender</h6>
+      </div>
+
+      <div class="col-md-6">
         <div id="pie_gender_cc_quotes"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="pie_gender_quotes"></div>
       </div>
 
       <div class="col-md-12">
         <p class="text-justify lead">
-          Although male gender has more climate change related quotes and more total number of general quotes than
-          women, in the table we can see that ratio present us the information that female gender is more aware of this
-          global problem. This can be interpreted as Simpson's paradox.
+          At the first glance, the male gender has more climate change related quotes and a bigger total number of
+          quotes than
+          the females. However, when comparing the ratio of <em>climate_change_quotes / all_quotes</em> for both men
+          (ratio = 0.79%) and women (ratio = 0.95%)
+          it seems as if the women are more aware of this global problem.
           <br>Interesting...
         </p>
       </div>
     </div>
 
     <br><br>
+
+    <!-- Age Analysis -->
     <div class="row">
       <div class="col-md-12">
         <p class="text-justify lead">
@@ -85,14 +102,23 @@
 
       <div class="col-md-12">
         <p class="text-justify lead">
-          So, we can see that number of quotes with respect to age parameter follows Gaussian-like distribution, with
-          anomaly in the age group of 21. Interesting...
-          Now, let's see if the age structure changes when we add gender dimensionality.
+          So, we can see that number of quotes with respect to age parameter follows a Gaussian-like distribution, with
+          small
+          anomalies. <br>
+          Now, let's see if the age structure changes when we add the aforementioned gender dimensionality.
         </p>
       </div>
 
-      <div class="col-md-12">
+      <div class="col-md-6">
         <h6 class="subheading text-center">Age analysis with added gender dimensionality</h6>
+      </div>
+      <div class="col-md-6">
+        <h6 class="subheading text-center">Age analysis with added gender dimensionality for climate change quotes</h6>
+      </div>
+      <div class="col-md-6">
+        <div>{% include politicians_age_gender.html %}</div>
+      </div>
+      <div class="col-md-6">
         <div>
           {% include CC_age_gender.html %}
         </div>
@@ -100,76 +126,74 @@
 
       <div class="col-md-12">
         <p class="text-justify lead">
-          The visual representatinon, as well as the mean values, are similar, we could ask ourselves if these two
-          distributions are the same. Since the std values are similar, we can apply ttest.
+          The visual representatinon of the age analysis with added gender dimensionality for climate change quotes
+          (i.e. the second plot), as
+          well as the <em>mean</em> values, are similar - we could ask ourselves if these
+          two distributions are coming from a same underlying distribution. Since the std values are similar, we can
+          apply the ttest.
         </p>
         <p class="text-justify lead">
-          Since the p-value is less than ordinary 0.01, we can conclude that difference in mean values is significant,
-          therefore these are the different distributions.
-        </p>
-      </div>
-    </div>
-
-    <br><br>
-    <div class="row">
-      <div class="col-md-12">
-        <p class="text-justify lead">
-          <strong>Educational analysis</strong>
+          After getting a p-value = 1.79e-05 (which is less than ordinary 0.01), we can conclude that the difference in
+          the mean values is significant, therefore these two distributions most likely come from two different
+          distributions - where the mean for females is a bit lower than the one for males.
         </p>
         <p class="text-justify lead">
-          How level of education affects self-awareness?
-        </p>
-      </div>
-
-      <div class="col-md-12">
-        <h6 class="subheading text-center">Top speakers in respect to number of degrees</h6>
-        <div>
-          {% include degrees_all_plot.html %}
-        </div>
-      </div>
-
-      <div class="col-md-12">
-        <p class="text-justify lead">
-          Blabla
+          This could lead us to the conclusion that older female politicians talk less about climate change than their
+          male colleagues.
+          However, taking the first plot into the account, we can observe a much bigger number of older male politicians
+          than female - making the older female politicians, to some extent, underrepresented.
         </p>
       </div>
     </div>
 
     <br><br>
 
+    <!-- Political Analysis -->
     <div class="row">
       <div class="col-md-12">
         <p class="text-justify lead">
-          Two major political parties in the US are The Republican Party and The Democratic Party.
-          Let's explore the distribution of politicians, as well as quotes, in regards to these two political parties.
+          <strong>Political affiliation analysis</strong>
+        </p>
+        <p class="text-justify lead">
+          The two major political parties in the US are The Republican Party and The Democratic Party.
+          Let's explore the distribution of quotesn in regards to these two political parties.
         </p>
       </div>
 
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <h6 class="subheading text-center">Politicians grouped by party affiliation</h6>
-        <div id="pie_politicians_party"></div>
+      </div> -->
+      <div class="col-md-6">
+        <h6 class="subheading text-center">Quotes grouped by party affiliation</h6>
       </div>
-      <div class="col-md-4">
-        <h6 class="subheading text-center">Quotes grouped by party affiliation <span class="hide">extra</span></h6>
+      <div class="col-md-6">
+        <h6 class="subheading text-center">Climate change quotes grouped by party affiliation</h6>
+      </div>
+
+      <!-- <div class="col-md-4">
+        <div id="pie_politicians_party"></div>
+      </div> -->
+      <div class="col-md-6">
         <div id="pie_quotes_party"></div>
       </div>
-      <div class="col-md-4">
-        <h6 class="subheading text-center">Climate change quotes grouped by party affiliation</h6>
+      <div class="col-md-6">
         <div id="pie_climate_quotes_party"></div>
       </div>
-
+      <br><br>
       <div class="col-md-12">
         <p class="text-justify lead">
-          From the above inspection, we see extraordinary event. Democratic party, although having less number of
-          general quotes in total, has bigger number of quotes related to climate change. Does it mean that Democrats
+          The inspection of these pie charts unfolds some peculiar things. The Democratic party, although having less
+          number of
+          quotes in total, has a bigger number of quotes related to climate change. Does it mean that Democrats
           are more conscious?
-          <br>On the other hand, ratio values are very small, so it may lead us to believe that political affiliation is
+          <br>On the other hand, ratio values (i.e. <em>climate_change_quotes / all_quotes</em>) are very small, so it
+          may lead us to believe that political affiliation is
           irrelevant?
-          <br>Peculiar...
+          <br><br>Genuinely peculiar...
         </p>
       </div>
     </div>
-    <br><br>
+
     <div class="row">
       <div class="col-md-12">
         <p class="text-justify lead">
@@ -183,10 +207,15 @@
           </div>
           <div class="panel-body">
             <div class="col-md-10 display-inline-block">
-              <div id="testest"></div>
+              <div id="top-speakers"></div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          As expected, the majority of climate change top speakers is indeed affiliated with the Democratic party.
+        </p>
       </div>
     </div>
 
@@ -194,61 +223,135 @@
 
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h3 class="section-heading text-uppercase">Further Analysis</h3>
-        <h3 class="section-subheading text-muted">
+        <h3 class="section-heading text-uppercase">Linear Regression</h3>
+        <h3 class="section-subheading text-muted mb-2">
           Some more analysis...
         </h3>
       </div>
+      <br><br>
 
       <div class="col-md-12">
         <p class="text-justify lead">
           Okay, that's enough of analysing the isolated parameters.
           We have observed some interesting statistics, but is it relevant to our problem? <br>
           Recall that our analysis should be based on different political and demographic parameters of speakers. So,
-          let's see which of aforementioned and described parameters really matter. <br>
+          let's see which of aforementioned parameters really matter. <br>
           As Bob West would say, 'Linear regression gives us free p-values'. So why would not we utilize this present.
         </p>
         <p class="text-justify lead">
-          Based on the result of linear regression we can conclude:
-        <ul>
-          <li>Features <strong>age</strong> and <strong>gender</strong> have p-values bigger than 0.05, and therefore do not have significant
+          The main goal of the linear regression is to determine the impact given parameters have on the number of
+          climate change quotes (i.e the outcome is the number of climate change related quotes).
+          <br>
+          When it comes to features, we will feed the linear regression with following ones:
+          degree_num, age, party_name, gender_name,
+          was_presidental_candidate, was_in_congres, party_count, was_president,
+          numOccurrences, totalNumOccurrences, total_num_quotes.
+        </p>
+        <br>
+        <p class="text-justify lead">
+          Feel free to take a sneak peek at the result of linear regression:
+        </p>
+        <div class="col-md-12">
+          <pre>                            OLS Regression Results
+            ==============================================================================
+            Dep. Variable:              quotation   R-squared:                       0.949
+            Model:                            OLS   Adj. R-squared:                  0.949
+            Method:                 Least Squares   F-statistic:                     4929.
+            Date:                Thu, 16 Dec 2021   Prob (F-statistic):               0.00
+            Time:                        03:04:16   Log-Likelihood:                -13979.
+            No. Observations:                3167   AIC:                         2.798e+04
+            Df Residuals:                    3154   BIC:                         2.806e+04
+            Df Model:                          12
+            Covariance Type:            nonrobust
+            =====================================================================================================
+                                                    coef    std err          t      P&gt;|t|      [0.025      0.975]
+            -----------------------------------------------------------------------------------------------------
+            Intercept                           -20.2614      3.060     -6.622      0.000     -26.261     -14.262
+            party_name[T.Republican Party]       -3.9679      0.734     -5.406      0.000      -5.407      -2.529
+            gender_name[T.Male]                   1.2639      0.885      1.429      0.153      -0.471       2.998
+            gender_name[T.Transgender female]     3.7035     11.620      0.319      0.750     -19.080      26.487
+            was_candidate[T.True]                 5.5953      2.323      2.409      0.016       1.041      10.149
+            was_in_congres[T.True]                6.8878      0.835      8.251      0.000       5.251       8.525
+            was_president[T.True]              -882.1337     35.320    -24.976      0.000    -951.386    -812.881
+            degree_num                           14.8775      1.616      9.208      0.000      11.710      18.045
+            age                                  -0.0306      0.027     -1.151      0.250      -0.083       0.021
+            party_count                          25.9043      2.569     10.082      0.000      20.866      30.942
+            numOccurrences                        0.1794      0.001    135.605      0.000       0.177       0.182
+            totalNumOccurrences                   0.0004   8.72e-05      4.377      0.000       0.000       0.001
+            total_num_quotes                     -0.0010   4.77e-05    -21.944      0.000      -0.001      -0.001
+            ==============================================================================
+            Omnibus:                     2529.379   Durbin-Watson:                   2.026
+            Prob(Omnibus):                  0.000   Jarque-Bera (JB):          2639467.474
+            Skew:                           2.466   Prob(JB):                         0.00
+            Kurtosis:                     144.343   Cond. No.                     1.49e+06
+            ==============================================================================
+            </pre>
+        </div>
+
+
+        <div class="text-justify lead">
+          Based on the results of linear regression we can conclude:
+          <li>Features <em>age</em> and <em>gender</em> have p-values bigger than 0.05, and therefore do
+            not have significant
             influence on outcome, i.e. on the number of quotations regarding climate change. </li>
-          <li>Political features (*was_candidate, was_in_congres, was_president, party_count, party_name*) have
+          <li>Political features (<em>was_candidate, was_in_congres, was_president, party_count, party_name</em>) have
             significant impact on outcome.</li>
           <li>Number of degrees have significant impact on outcome.</li>
-          <li>Features *numOccurrences, totalNumOccurrences, total_num_quotes*, which are more media related, have
+          <li>Features <em>numOccurrences, totalNumOccurrences, total_num_quotes</em>, which are more media related,
+            have
             significant impact on outcome.</li>
-        </ul>
+        </div>
         <br>
 
-        Note the R<sup>2</sup> coefficient, it is 0.949, which means that we have explained most of the variance. But
-        this observation is not of a importance if residuals are not zero-centered. Let's check that.
+        <p class="text-justify lead">
+          If you have been reading carefully (don't worry we won't judge if you haven't) you certainly remember that
+          during gender analysis we observed
+          that women talk more about climate change than men, relatively speaking (comparing
+          climate_change_quotes/all_quotes ratios). Surprisingly,
+          linear regression is not gender biased - the gender feature is irrelevant.
+          This must mean that another feature is the influential one, and that the gender feature is just masking it.
+        </p>
 
+        <p class="text-justify lead">
+          We have a strong hunch that this <em>mystical</em> feature is none other than the party name (which indeed is
+          a significant feature).
+          <br>
+          Let's take a closer look at some more (you guessed it) charts.
+        </p>
+
+        <div class="col-md-12">
+          <h6 class="subheading text-center">Gender distribution in political parties</h6>
+        </div>
+
+        <div class="col-md-12">
+          {% include gender_party.html %}
+        </div>
+        <div class="col-md-12">
+          {% include gender_party_log.html %}
+        </div>
+
+        <p class="text-justify lead">
+          Clearly, the proportion of women is much bigger in the Democratic party - there are almost twice as much women
+          in the Democratic Party than in the Republican Party. Hence, it is not the gender that's
+          dominating, but simply the party.
+        </p>
+        <br> <br>
+        <p class="text-justify lead">
+          Note the R<sup>2</sup> coefficient, it is 0.949, which means that we have explained most of the variance. But
+          this observation is not of a importance if residuals are not zero-centered. Let's check that.
         </p>
       </div>
-      <div class="col-md-12">
+
+      <div class="col-md-12 residuals">
         <img src="assets/img/residuals.png" alt="" srcset="">
       </div>
       <div class="col-md-12">
         <p class="text-justify lead">
-          Since residuals are mean centered, we can conclude that R<sup>2</sup> measure is relevant. <br>
-          So this tell us that we have three groups of features which are significant, but which ones are the most important?
+          Thank God the residuals are mean centered! We can conclude that R<sup>2</sup> measure is relevant. <br>
+          So this tell us that we have three groups of features which are significant, but which ones are the most
+          important?
         </p>
       </div>
     </div>
-
-
-
-    <div class="row">
-      <div class="col-md-12">
-        <h6 class="subheading text-center">Number of climate change quotations by gender</h6>
-        <div>
-          {% include CCquotes_per_gender.html %}
-        </div>
-      </div>
-    </div>
-
-
-
 
 </section>
