@@ -1,28 +1,28 @@
 <!-- Matching -->
 <div class="row">
     <div class="col-md-12">
-        <p class="text-justify lead">
-            <strong>Matching</strong>
-        </p>
+        <h5 class="section-heading mt-3 mb-3 tb-3">Matching</h5>
     </div>
 
     <div class="col-md-12">
         <p class="text-justify lead">
-            Our assumption is that during the period of the political campaigns (treatment), politicians get more
-            media attention, i.e. they are more cited, and therefore have more quotes regarding climate change
-            (outcome).
+            Our assumption is that during the period of the political campaigns (treatment), politicians will focus on
+            the problem of climate change and how they would address them during their mandate, resulting in more
+            climate change quotes that period (target).
             <br><br>
-            How could we test this? Well, simply we will observe number of quotes speaker had in the periods of time
-            when campaings were actual, and when they were not.
-            And, the most interesting part, we will match speakers with...themselves! So, we will observe how many
-            quotes one had in the period without campaigns (i.e. without treatment), and in the period during the
-            campaings
-            (i.e. with treatment). And what about confounders? Well, we are matching them with themselves, perfect
-            match, same characteristics, no confounders!
+            How can we test this? Well, simply we will observe number of quotes speaker had in the periods of time when
+            campaigns were active, and when they were not. And, the most interesting part, we will match speakers with
+            themselves. So, we will observe how many quotes one had in the period without campaigns (i.e. without
+            treatment), and in the period during the campaigns (i.e. with treatment). And what about confounders? Well,
+            we are matching them with themselves, so the confouners may only be events which match the periods during
+            election campaigns (i.e. climate disasters that spanned the campaign periods). Since the campaign period is
+            long then we do not expect disasters to occur any more frequently during them then outside of them. Based on
+            the informations provided in the article, we will use as the campaign period the timespan of one year and a
+            half before the elections.
 
-            Based on the informations provided in the <a
-                href="https://www.thoughtco.com/when-the-race-for-president-begins-3367552">article</a>, we will use
-            as campaing period the period of year and a half before the elections.
+            The treated group represents politicians under the campaign period and the control group are the same
+            politicians outside of campaigning.
+            Since the target is a real number we will show the distribution of its values.
         </p>
     </div>
 
@@ -32,12 +32,10 @@
 
     <div class="col-md-12">
         <p class="text-justify lead">
-            Since this CCDF graph is close to linear on loglog scale, we can conclude that underlying
-            distributioin is sort of a power-law. <br>
-            We can see that distribution of the treated group is slightly shifted, so it could express a
-            tendency in quoting climate change issues during the period of political campaigns. <br>
-            But is it common to all politicians, or only specific for some political parties? Let's test it on
-            Democrats and Republicans.
+            The graph is the CCDF function on a log-log scale showing that the distributions are power law
+            distributions.
+            <br>
+            Now will shall run this analysis separately for Democrats and Republicans.
         </p>
     </div>
 
@@ -47,9 +45,9 @@
 
     <div class="col-md-12">
         <p class="text-justify lead">
-            Wow, interesting. <br>
-            So, Democrats are more prone to use inhance usage of climate change topic in their political
-            campaigns. Shifty, shifty...
+            As we can see for Democrats election period is one for which the distribution of quotes is shifted to higher
+            values. That is, Democrats tend to focus on climate change more during elections. Adversely, Republicans
+            tend to shy away from that topic during the campaign.
         </p>
     </div>
 </div>
