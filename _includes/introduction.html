@@ -3,12 +3,6 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-12">
-        <blockquote class="blockquote">
-          <p class="mb-0">Refusing to say the words climate change doesn't mean climate change isn't here.</p>
-          <footer class="blockquote-footer">President Barack Obama 2015.</footer>
-        </blockquote>
-      </div>
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase mb-3 tb-3">Introduction</h2>
 
@@ -53,6 +47,14 @@
             problem. Let us look at both techniques.
             <li>
               <h6 class="inline section-heading mt-3 mb-1 tb-3">FastText (unsupervised)</h6>
+              <div class="indent">
+                This model is able to train on a given corpus of text and learn sentence representation in a vector
+                format. The quotes had to be first cleaned using stop word removal, lower-casing and removing
+                punctuation. After training the model we need to select what is known as a "query". This is a sentence
+                which would be embedded and compared using cosine similarity to find the most similar quotes. The query
+                selected for the purpose of extracting climate change related quotes was "climate change" based on the
+                results on the validation set.
+              </div>
             </li>
             <li>
               <h6 class="inline section-heading mt-3 mb-1 tb-3">BERT (supervised)</h6>
@@ -61,7 +63,8 @@
                 dataset, <a
                   href="https://www.sustainablefinance.uzh.ch/en/research/climate-fever/climatext.html">ClimaText</a>.
                 As the paper did not provide a trained model for this task we need to train one. The model used for this
-                is the <a href="https://huggingface.co/">Huggingface</a> implementation of distilled BERT for sequence classification. After training, the
+                is the <a href="https://huggingface.co/">Huggingface</a> implementation of distilled BERT for sequence
+                classification. After training, the
                 model returns the probability of a quote being related to climate change.
               </div>
             </li>
@@ -76,7 +79,8 @@
               {% include prc.html %}
             </div>
             <div>
-              The general performance of the supervised technique is higher, for this reason, we decide to use this model
+              The general performance of the supervised technique is higher, for this reason, we decide to use this
+              model
               to estimate the probability of a quote to be related to climate change.
               <br><br>We continue by narrowing the dataset of 5.7 million quotes to a set of around 47000 by selecting
               only those classified as being about climate change.
