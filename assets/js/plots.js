@@ -114,24 +114,19 @@ function generatePieLabel(name, data) {
 }
 
 function generateTimeseriesChart(name, data) {
-  columns = [data[0]];
+  columns = ['x'];
+  values = [data[0][1]];
 
   for (let i = 1; i < data.length; i++) {
-
-    values = []
-    values.push(data[i][0])
-
-    for (let j = 1; j < data[i].length; j++) {
-      values.push(parseFloat(data[i][j]))
-    }
-    columns.push(values);
+    columns.push(data[i][0])
+    values.push(parseFloat(data[i][1]))
   }
 
   return c3.generate({
     bindto: `#${name}`,
     data: {
       x: 'x',
-      columns: columns
+      columns: [columns, values]
     },
     axis: {
       x: {
@@ -139,6 +134,12 @@ function generateTimeseriesChart(name, data) {
         tick: {
           format: '%Y-%m-%d'
         }
+      },
+      y: {
+          label: {
+              text: 'number of quotes',
+              position: 'outer-center'
+          }
       }
     }
   });
