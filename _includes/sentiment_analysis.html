@@ -1,10 +1,10 @@
 <!-- Sentiment Analysis -->
-<section class="page-section" id="sentiment_analysis">
+<section class="bg-light page-section" id="sentiment_analysis">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase">Sentiment Analysis</h2>
-        <h3 class="section-subheading text-muted">sentiment analysis...</h3>
+        <h3 class="section-subheading text-muted">it's all about emotion...</h3>
       </div>
     </div>
     <div class="row">
@@ -15,59 +15,128 @@
           of a quote reveals very little about someones opinions on climate change and the message they convey.
           Additionally, it can let us inquire into the overall atmosphere of one's statements.<br><br>
           To determine the sentiment we can use a pretrained model from Huggingface. After running this model we append
-          a values between -1 and 1 to each quote. Where negative values imply a negative sentiment and vice versa. This
+          a value between -1 and 1 to each quote - where negative values imply a negative sentiment and vice versa. This
           model achieves state-of-the-art accuracy of 92.7%.
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <ul class="timeline">
-          {%- assign align = site.data.sitetext[site.locale].sentiment_analysis.start_align -%}
-          {%- for event in site.data.sitetext[site.locale].sentiment_analysis.events -%}
-          {%- if align == "right" -%}
-          {%- if event.align and event.align == "left" -%}
-          {%- assign align = "right" -%}
-          <li>
-            {%- else -%}
-            {%- assign align = "left" %}
-          <li class="timeline-inverted">
-            {% endif %}
-            {% else %}
-            {%- if event.align and event.align == "right" -%}
-            {%- assign align = "left" -%}
-          <li class="timeline-inverted">
-            {%- else -%}
-            {%- assign align = "right" %}
-          <li>
-            {% endif %}
-            {%- endif -%}
-            <div class="timeline-image">
-              <img class="rounded-circle img-fluid" src="{{ event.image }}" alt="{{ event.alt | default: ""}}">
-            </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h4>{{ event.year | markdownify }}</h4>
-                <h4 class="subheading">{{ event.title }}</h4>
-              </div>
-              <div class="timeline-body">
-                <div class="text-muted">{{ event.desc | markdownify }}</div>
-              </div>
-            </div>
-          </li>
-          {% endfor %}
 
-          {% if site.data.sitetext[site.locale].sentiment_analysis.end %}
-          <li class="timeline-inverted">
-            <div class="timeline-image">
-              <h4>{{ site.data.sitetext[site.locale].sentiment_analysis.end }}</h4>
-            </div>
-          </li>
-          {% endif %}
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          Let us inspect the positive and negative sentiment of climate change quotes in respect to political parties.
+        </p>
+      </div>
 
-        </ul>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Total number of quotes per party</h6>
+      </div>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Number of positive sentiment climate change quotes</h6>
+      </div>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Number of negative sentiment climate change quotes</h6>
+      </div>
+      <div class="col-md-4">
+        <div id="pie_positive"></div>
+      </div>
+      <div class="col-md-4">
+        <div id="pie_positive_cc"></div>
+      </div>
+      <div class="col-md-4">
+        <div id="pie_negative_cc"></div>
+      </div>
+
+      <br><br>
+
+      <div class="col-md-12 residuals mt-2">
+        <pre>
+          ===========================================================================================================
+                                              total_num    positive    ratio_positive    negative    ratio_negative
+          -----------------------------------------------------------------------------------------------------------
+          Democratic Party                    30599        17183       0.56              13416       0.44
+          Republican Party                    15967        7199        0.45              8768        0.55
+          ==========================================================================================================
+          </pre>
+      </div>
+
+      <br>
+
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          Based on the graphical representation above, we can see that the Democratic Party has a tendecy to cite its
+          climate change quotes mostly with positive sentiment.
+        </p>
+        <p class="text-justify lead">
+          Furthermore, Democrats have more quotes with negative sentiment, and
+          also more quotes in total. However, if we consider the ratio (i.e. <em>negative_climate_change_quotes /
+            total_num</em>) we can conclude
+          that Republicans (ratio = 0.55) are more likely to cite their qotes with negative
+          sentiment than the Democrats (ratio = 0.43).
+        </p>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-subheading text-justify lead">
+          Moreover, we will analyse misinformations related with climate change quotes. <br>
+          The key feature for this process has been extracted using CARDS (Computer-assisted detection and
+          classification of misinformation
+          about climate change) model. This feature takes integer values from the range [0,17]. The value 0 refers to
+          quote not being classified as misinformation, while integer values from rage [1-17] refer to different classes
+          of misinformations. For our analysis, we will focus only on the question if misinformation exists, and,
+          therefore,
+          we will consider only 2 classes: true quote (i.e. value of 0) and misinformation (i.e. any integer value from
+          range [1-17].<br>
+          So let's start.
+        </div>
+      </div>
+      <br><br>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Total number of quotes per party</h6>
+      </div>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Number of true climate change quotes</h6>
+      </div>
+      <div class="col-md-4">
+        <h6 class="subheading text-center">Number of misinformative climate change quotes</h6>
+      </div>
+      <div class="col-md-4">
+        <div id="pie_misinfo_total"></div>
+      </div>
+      <div class="col-md-4">
+        <div id="pie_true"></div>
+      </div>
+      <div class="col-md-4">
+        <div id="pie_misinformation"></div>
+      </div>
+
+      <br><br>
+      <div class="col-md-12 residuals mt-2">
+        <pre>
+          ===============================================================================================================
+                                              total_num    true    ratio_true    misinformation    ratio_misinformation
+          ---------------------------------------------------------------------------------------------------------------
+          Democratic Party                    30599        29448   0.96          1151              0.03
+          Republican Party                    15967        13977   0.87          1990              0.12
+          ===============================================================================================================
+          </pre>
+      </div>
+      <br>
+      <div class="col-md-12">
+        <p class="text-justify lead">
+          In the table we can see that Democrats are dominant over Republicans in every aspect. Based on the values
+          presented in the table, we can see that Democrats are more likely to say true quotes, i.e. quotes which are
+          not misconseption on the topic of climate change.</p>
+        <p class="text-justify lead">
+          Interesting. Here we can see that Republicas are more likely to say deceiving quotes, or fake-news.
+          <br>
+
+          So far, regarding sophisticated sentiment analysis, we have noticed that Republicans are more negative and
+          more deceiving. <br> Not a lovely characteristics.
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 <!-- End Sentiment Analysis -->

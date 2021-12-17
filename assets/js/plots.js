@@ -57,8 +57,9 @@ function generatePie(name, data) {
     tooltip: {
       format: {
         value: function (value, ratio) {
+          var length = Math.log(value) * Math.LOG10E + 1 | 0;
           var percentFormat = d3.format('.1%');
-          var twoDecimal = d3.format('.2f');
+          var twoDecimal = d3.format(`,.${length}r`);
           return '<ul class="list-inline">' +
             '<li><span class="badge badge-pill badge-secondary">' + percentFormat(ratio) + '</span></li>' +
             '<li><span class="badge badge-pill badge-secondary">' + twoDecimal(value) + '</span></li>' +
@@ -90,15 +91,18 @@ function generatePieLabel(name, data) {
         show: true,
         expand: true,
         format: function (value, ratio, id) {
-          return d3.format(",.9r")(value);
+          var length = Math.log(value) * Math.LOG10E + 1 | 0;
+          var twoDecimal = d3.format(`,.${length}r`);
+          return twoDecimal(value);
         }
       }
     },
     tooltip: {
       format: {
         value: function (value, ratio) {
+          var length = Math.log(value) * Math.LOG10E + 1 | 0;
           var percentFormat = d3.format('.1%');
-          var twoDecimal = d3.format('.2f');
+          var twoDecimal = d3.format(`,.${length}r`);
           return `<ul class="list-inline">
                     <li><span class="badge badge-pill badge-secondary">${percentFormat(ratio)}</span></li>
                     <li><span class="badge badge-pill badge-secondary">${twoDecimal(value)}</span></li>

@@ -68,6 +68,17 @@
         <div id="pie_gender_quotes"></div>
       </div>
 
+      <div class="col-md-12 residuals mt-2">
+        <pre>
+          ============================================================================
+                                              total_num     climate_change    ratio
+          ----------------------------------------------------------------------------
+          Male                                4796931       38173            0.79
+          Female                               942930       8977             0.95
+          =============================================================================
+          </pre>
+      </div>
+
       <div class="col-md-12">
         <p class="text-justify lead">
           At the first glance, the male gender has more climate change related quotes and a bigger total number of
@@ -220,138 +231,4 @@
     </div>
 
     <br><br>
-
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h3 class="section-heading text-uppercase">Linear Regression</h3>
-        <h3 class="section-subheading text-muted mb-2">
-          Some more analysis...
-        </h3>
-      </div>
-      <br><br>
-
-      <div class="col-md-12">
-        <p class="text-justify lead">
-          Okay, that's enough of analysing the isolated parameters.
-          We have observed some interesting statistics, but is it relevant to our problem? <br>
-          Recall that our analysis should be based on different political and demographic parameters of speakers. So,
-          let's see which of aforementioned parameters really matter. <br>
-          As Bob West would say, 'Linear regression gives us free p-values'. So why would not we utilize this present.
-        </p>
-        <p class="text-justify lead">
-          The main goal of the linear regression is to determine the impact given parameters have on the number of
-          climate change quotes (i.e the outcome is the number of climate change related quotes).
-          <br>
-          When it comes to features, we will feed the linear regression with following ones:
-          degree_num, age, party_name, gender_name,
-          was_presidental_candidate, was_in_congres, party_count, was_president,
-          numOccurrences, totalNumOccurrences, total_num_quotes.
-        </p>
-        <br>
-        <p class="text-justify lead">
-          Feel free to take a sneak peek at the result of linear regression:
-        </p>
-        <div class="col-md-12">
-          <pre>                            OLS Regression Results
-            ==============================================================================
-            Dep. Variable:              quotation   R-squared:                       0.949
-            Model:                            OLS   Adj. R-squared:                  0.949
-            Method:                 Least Squares   F-statistic:                     4929.
-            Date:                Thu, 16 Dec 2021   Prob (F-statistic):               0.00
-            Time:                        03:04:16   Log-Likelihood:                -13979.
-            No. Observations:                3167   AIC:                         2.798e+04
-            Df Residuals:                    3154   BIC:                         2.806e+04
-            Df Model:                          12
-            Covariance Type:            nonrobust
-            =====================================================================================================
-                                                    coef    std err          t      P&gt;|t|      [0.025      0.975]
-            -----------------------------------------------------------------------------------------------------
-            Intercept                           -20.2614      3.060     -6.622      0.000     -26.261     -14.262
-            party_name[T.Republican Party]       -3.9679      0.734     -5.406      0.000      -5.407      -2.529
-            gender_name[T.Male]                   1.2639      0.885      1.429      0.153      -0.471       2.998
-            gender_name[T.Transgender female]     3.7035     11.620      0.319      0.750     -19.080      26.487
-            was_candidate[T.True]                 5.5953      2.323      2.409      0.016       1.041      10.149
-            was_in_congres[T.True]                6.8878      0.835      8.251      0.000       5.251       8.525
-            was_president[T.True]              -882.1337     35.320    -24.976      0.000    -951.386    -812.881
-            degree_num                           14.8775      1.616      9.208      0.000      11.710      18.045
-            age                                  -0.0306      0.027     -1.151      0.250      -0.083       0.021
-            party_count                          25.9043      2.569     10.082      0.000      20.866      30.942
-            numOccurrences                        0.1794      0.001    135.605      0.000       0.177       0.182
-            totalNumOccurrences                   0.0004   8.72e-05      4.377      0.000       0.000       0.001
-            total_num_quotes                     -0.0010   4.77e-05    -21.944      0.000      -0.001      -0.001
-            ==============================================================================
-            Omnibus:                     2529.379   Durbin-Watson:                   2.026
-            Prob(Omnibus):                  0.000   Jarque-Bera (JB):          2639467.474
-            Skew:                           2.466   Prob(JB):                         0.00
-            Kurtosis:                     144.343   Cond. No.                     1.49e+06
-            ==============================================================================
-            </pre>
-        </div>
-
-
-        <div class="text-justify lead">
-          Based on the results of linear regression we can conclude:
-          <li>Features <em>age</em> and <em>gender</em> have p-values bigger than 0.05, and therefore do
-            not have significant
-            influence on outcome, i.e. on the number of quotations regarding climate change. </li>
-          <li>Political features (<em>was_candidate, was_in_congres, was_president, party_count, party_name</em>) have
-            significant impact on outcome.</li>
-          <li>Number of degrees have significant impact on outcome.</li>
-          <li>Features <em>numOccurrences, totalNumOccurrences, total_num_quotes</em>, which are more media related,
-            have
-            significant impact on outcome.</li>
-        </div>
-        <br>
-
-        <p class="text-justify lead">
-          If you have been reading carefully (don't worry we won't judge if you haven't) you certainly remember that
-          during gender analysis we observed
-          that women talk more about climate change than men, relatively speaking (comparing
-          climate_change_quotes/all_quotes ratios). Surprisingly,
-          linear regression is not gender biased - the gender feature is irrelevant.
-          This must mean that another feature is the influential one, and that the gender feature is just masking it.
-        </p>
-
-        <p class="text-justify lead">
-          We have a strong hunch that this <em>mystical</em> feature is none other than the party name (which indeed is
-          a significant feature).
-          <br>
-          Let's take a closer look at some more (you guessed it) charts.
-        </p>
-
-        <div class="col-md-12">
-          <h6 class="subheading text-center">Gender distribution in political parties</h6>
-        </div>
-
-        <div class="col-md-12">
-          {% include gender_party.html %}
-        </div>
-        <div class="col-md-12">
-          {% include gender_party_log.html %}
-        </div>
-
-        <p class="text-justify lead">
-          Clearly, the proportion of women is much bigger in the Democratic party - there are almost twice as much women
-          in the Democratic Party than in the Republican Party. Hence, it is not the gender that's
-          dominating, but simply the party.
-        </p>
-        <br> <br>
-        <p class="text-justify lead">
-          Note the R<sup>2</sup> coefficient, it is 0.949, which means that we have explained most of the variance. But
-          this observation is not of a importance if residuals are not zero-centered. Let's check that.
-        </p>
-      </div>
-
-      <div class="col-md-12 residuals">
-        <img src="assets/img/residuals.png" alt="" srcset="">
-      </div>
-      <div class="col-md-12">
-        <p class="text-justify lead">
-          Thank God the residuals are mean centered! We can conclude that R<sup>2</sup> measure is relevant. <br>
-          So this tell us that we have three groups of features which are significant, but which ones are the most
-          important?
-        </p>
-      </div>
-    </div>
-
 </section>

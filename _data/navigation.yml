@@ -13,8 +13,14 @@ en: &DEFAULT_EN
     - dropdown:
       - title: "Basic Analysis"
         section: basic_analysis
+      - title: "Linear Regression"
+        section: linear_regression
       - title: "Sentiment Analysis"
         section: sentiment_analysis
+      - title: "Timeline Analysis"
+        section: timeline_analysis
+      - title: "Matching"
+        section: matching
     - title: "Conclusion"
       section: conclusion
     - title: "Team"
