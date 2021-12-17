@@ -8,17 +8,12 @@
 # -----------------
 en: &DEFAULT_EN
   header:
-    title: Welcome to our ADA project!
-    text: It's Nice To Meet You
-    button: Tell Me More
     quotation: "../assets/img/quotation.svg"
 
   sentiment_analysis:
     title: "Sentiment Analysis"
     text: "Lorem ipsum timeline"
     section: sentiment_analysis
-    # left is the default
-    #start_align: "left"
     events:
       - title: "Our Humble Beginnings"
         year: "2009-2011"
