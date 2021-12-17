@@ -90,7 +90,7 @@ function generatePieLabel(name, data) {
         show: true,
         expand: true,
         format: function (value, ratio, id) {
-          return d3.format(",.2r")(value);
+          return d3.format(",.9r")(value);
         }
       }
     },
