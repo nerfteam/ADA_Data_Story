@@ -11,16 +11,12 @@ en: &DEFAULT_EN
     - title: "Introduction"
       section: introduction
     - dropdown:
-      - title: "Basic Analysis"
+      - title: "How much is said?"
         section: basic_analysis
-      - title: "Linear Regression"
-        section: linear_regression
-      - title: "Sentiment Analysis"
+      - title: "What are they saying?"
         section: sentiment_analysis
-      - title: "Timeline Analysis"
+      - title: "When are they talking?"
         section: timeline_analysis
-      - title: "Matching"
-        section: matching
     - title: "Conclusion"
       section: conclusion
     - title: "Team"

@@ -1,59 +1,71 @@
 <!-- Matching -->
-<section class="bg-light page-section" id="matching">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">Matching</h2>
-                <h3 class="section-subheading text-muted">
-                    A match made in heaven...
-                </h3>
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <p class="text-justify lead">
-                Our assumption is that during the period of the political campaigns (treatment), politicians get more
-                media attention, i.e. they are more cited, and therefore have more quotes regarding climate change
-                (outcome).
-                <br><br>
-                How could we test this? Well, simply we will observe number of quotes speaker had in the periods of time
-                when campaings were actual, and when they were not.
-                And, the most interesting part, we will match speakers with...themselves! So, we will observe how many
-                quotes one had in the period without campaigns (i.e. without treatment), and in the period during the
-                campaings
-                (i.e. with treatment). And what about confounders? Well, we are matching them with themselves, perfect
-                match, same characteristics, no confounders!
-
-                Based on the informations provided in the <a
-                    href="https://www.thoughtco.com/when-the-race-for-president-begins-3367552">article</a>, we will use
-                as campaing period the period of year and a half before the elections.
-            </p>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <h6 class="subheading text-center">Boxplot General</h6>
-            </div>
-            <div class="col-md-12">
-                {% include general_match.html %}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <h6 class="subheading text-center">Boxplot Democratic</h6>
-            </div>
-            <div class="col-md-6">
-                <h6 class="subheading text-center">Boxplot Republican</h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                {% include democratic_match.html %}
-            </div>
-
-            <div class="col-md-6">
-                {% include republican_match.html %}
-            </div>
-        </div>
+<div class="row">
+    <div class="col-md-12">
+        <p class="text-justify lead">
+            <strong>Matching</strong>
+        </p>
     </div>
-</section>
+
+    <div class="col-md-12">
+        <p class="text-justify lead">
+            Our assumption is that during the period of the political campaigns (treatment), politicians get more
+            media attention, i.e. they are more cited, and therefore have more quotes regarding climate change
+            (outcome).
+            <br><br>
+            How could we test this? Well, simply we will observe number of quotes speaker had in the periods of time
+            when campaings were actual, and when they were not.
+            And, the most interesting part, we will match speakers with...themselves! So, we will observe how many
+            quotes one had in the period without campaigns (i.e. without treatment), and in the period during the
+            campaings
+            (i.e. with treatment). And what about confounders? Well, we are matching them with themselves, perfect
+            match, same characteristics, no confounders!
+
+            Based on the informations provided in the <a
+                href="https://www.thoughtco.com/when-the-race-for-president-begins-3367552">article</a>, we will use
+            as campaing period the period of year and a half before the elections.
+        </p>
+    </div>
+
+    <div class="col-md-12">
+        <h6 class="subheading text-center">Histogram for climate change quotes in (non)campaign periods with respect
+            to speaker</h6>
+    </div>
+    <div class="col-md-12">
+        {% include general_match.html %}
+    </div>
+
+    <div class="col-md-12">
+        <p class="text-justify lead">
+            Since this CCDF graph is close to linear on loglog scale, we can conclude that underlying
+            distributioin is sort of a power-law. <br>
+            We can see that distribution of the treated group is slightly shifted, so it could express a
+            tendency in quoting climate change issues during the period of political campaigns. <br>
+            But is it common to all politicians, or only specific for some political parties? Let's test it on
+            Democrats and Republicans.
+        </p>
+    </div>
+
+    <div class="col-md-6">
+        <h6 class="subheading text-center">Histogram for climate change quotes in (non)campaign periods - Democratic
+            Party</h6>
+    </div>
+    <div class="col-md-6">
+        <h6 class="subheading text-center">Histogram for climate change quotes in (non)campaign periods - Republican
+            Party</h6>
+    </div>
+
+    <div class="col-md-6">
+        {% include democratic_match.html %}
+    </div>
+    <div class="col-md-6">
+        {% include republican_match.html %}
+    </div>
+
+    <div class="col-md-12">
+        <p class="text-justify lead">
+            Wow, interesting. <br>
+            So, Democrats are more prone to use inhance usage of climate change topic in their political
+            campaigns. Shifty, shifty...
+        </p>
+    </div>
+</div>
