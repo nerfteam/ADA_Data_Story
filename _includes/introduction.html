@@ -26,12 +26,13 @@
 
             {% include world_co2.html %}
             <footer class="blockquote-footer">
-              Source: CO2 emissions excluding LUCF, 1850-2011 (CAIT v2.0)</footer>
+              Source: <a href="https://www.cgdev.org/media/who-caused-climate-change-historically">CO2 emissions
+                excluding LUCF, 1850-2011 (CAIT v2.0)</a> </footer>
             <br>
 
-            With almost a quarter of all emissions the US represents a major player. It is because of this that the public opinion
-            on this problem is of international importance. In order to shed more light on the delicate topic we need to
-            gain a better understanding of the mechanisms which are at work.
+            With almost a quarter of all emissions, the US represents a major player. It is because of this that public
+            opinion on this problem is of international importance. In order to shed more light on the delicate topic,
+            we need to gain a better understanding of the mechanisms which are at work.
           </div><br>
 
           <h5 class="section-heading mt-3 mb-3 tb-3">Where does the trail of breadcrumbs begin?</h5>
@@ -40,7 +41,7 @@
               href="https://dlab.epfl.ch/people/west/pub/Vaucher-Spitz-Catasta-West_WSDM-21.pdf">Quotebank<span
                 class="quotebank-dot">.</span></a>, a dataset of 178 million
             quotations. However, when only observing US politicians the set is reduced to around 5.7 million quotes
-            which is still an ocean of claims. In order to find the needed answers we must define what it means for a
+            which is still an ocean of claims. In order to find the needed answers, we must define what it means for a
             quote to be related to climate change. Superficially the problem might seem negligible, but it is inherently
             difficult and necessary for us to narrow down the data closer to our problem space.</div><br>
 
@@ -60,7 +61,7 @@
                 dataset, <a
                   href="https://www.sustainablefinance.uzh.ch/en/research/climate-fever/climatext.html">ClimaText</a>.
                 As the paper did not provide a trained model for this task we need to train one. The model used for this
-                is the Huggingface implementation of distilled BERT for sequence classification. After training, the
+                is the <a href="https://huggingface.co/">Huggingface</a> implementation of distilled BERT for sequence classification. After training, the
                 model returns the probability of a quote being related to climate change.
               </div>
             </li>
@@ -75,17 +76,17 @@
               {% include prc.html %}
             </div>
             <div>
-              The general performance of the supervised technique is higher, for this reason we decide to use this model
+              The general performance of the supervised technique is higher, for this reason, we decide to use this model
               to estimate the probability of a quote to be related to climate change.
               <br><br>We continue by narrowing the dataset of 5.7 million quotes to a set of around 47000 by selecting
-              only those classified being about climate change.
+              only those classified as being about climate change.
             </div>
           </div>
 
           <br><br>
           <div class="row">
             <div class="col-sm-12 text-center">
-              WOW! Thas was a loooong introduction, so congratulations on getting this far. Now, let's cut to the chase
+              WOW! That was a loooong introduction, so congratulations on getting this far. Now, let's cut to the chase
               and get our hands dirty!
               <br>
               In the words of the former US president: <q><em>What the hell is going on with Global Waming?</em></q>

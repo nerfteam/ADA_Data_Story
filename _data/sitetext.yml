@@ -12,56 +12,40 @@ en: &DEFAULT_EN
 
   conclusion:
     title: "Conclusion"
-    text: "hmm concluded what how blabla"
-    body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported."
     section: conclusion
 
   team:
     title: "Meet the team"
-    text: "Lorem ipsum dolor sit amet consectetur."
-    subtext: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde. **Markdown** supported.
     section: team
     people:
       - name: "Natalija Mitic"
         role: "Computer Science <i class='fas fa-laptop'></i>"
-        image: assets/img/team/500x500.jpg
         social:
           - url: mailto:naca@ntec.ch
             icon: fa fa-envelope
-          - url: https://github.com
+          - url: https://github.com/natalijamitic
             icon: fab fa-github
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
       - name: "Edvin Maid"
         role: "Computer Science <i class='fas fa-laptop'></i>"
-        image: assets/img/team/2.jpg
         social:
-          - url: mailto:naca@ntec.ch
+          - url: mailto:edvvin@mail.com
             icon: fa fa-envelope
-          - url: https://github.com
+          - url: https://github.com/Edvvin
             icon: fab fa-github
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
       - name: "Radenko Pejic"
         role: "Computer Science <i class='fas fa-laptop'></i>"
-        image: assets/img/team/500x500.jpg
         social:
-          - url: mailto:naca@ntec.ch
+          - url: mailto:radenkopejicvaljevo@gmail.com
             icon: fa fa-envelope
-          - url: https://github.com
+          - url: https://github.com/radenkoPejic
             icon: fab fa-github
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
       - name: "Filip Carevic"
         role: "Computer Science <i class='fas fa-laptop'></i>"
-        image: assets/img/team/500x500.jpg
         social:
-          - url: mailto:naca@ntec.ch
+          - url: mailto:filip.carevic11@gmail.com
             icon: fa fa-envelope
-          - url: https://github.com
+          - url: https://github.com/fcarevic
             icon: fab fa-github
-          - url: https://linkedin.com
-            icon: fab fa-linkedin-in
 
   footer:
     social:

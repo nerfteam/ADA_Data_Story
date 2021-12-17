@@ -9,9 +9,8 @@
 		</div>
 		<div class="row">
 			{% for person in site.data.sitetext[site.locale].team.people %}
-			<div class="col-sm-3">
+			<div class="col-12 col-md-6 col-lg-3">
 				<div class="team-member">
-					<img class="mx-auto rounded-circle" src="{{ person.image }}" alt="">
 					<h4>{{ person.name }}</h4>
 					<p class="text-muted">{{ person.role }}</p>
 					<ul class="list-inline social-buttons">
